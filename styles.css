@@ -1,0 +1,216 @@
+.title-container{
+    margin:2rem 2rem .5rem 2rem; 
+    display: grid;
+    grid-template-columns: 2fr 2fr 5fr .5fr 1fr 1fr;
+    grid-template-rows: 3rem;
+}
+.title-glass{
+    background-color:none;
+    font-weight: 700;
+    font-family: 'Quicksand', sans-serif;
+    backdrop-filter: blur(2px);
+    border-radius: 5px;
+    align-self: center;
+    text-align: center;
+    box-shadow: 5px 4px 7px rgb(40, 40, 40);
+    background: linear-gradient(140deg,
+    rgba(102, 168, 255, 0.15), 
+    rgba(255, 255, 255,.1) ,
+    rgba(255, 255, 255,.3),
+    rgba(102, 168, 255, 0.2),
+    rgba(255, 255, 255,.2), 
+    rgba(255, 255, 255,.2),
+    rgba(102, 168, 255, 0.2),
+    rgba(255, 255, 255,.2)
+    );
+}
+.task-container{
+    box-shadow: 5px 4px 7px rgb(40, 40, 40);
+    background-color:white;
+    margin:1rem 2rem;
+    padding: .5rem;
+    display: grid;
+    border-radius: 5px;
+    grid-template-columns: 2fr 2fr 5fr .5fr 1fr 1fr;
+    font-family: 'Quicksand', sans-serif;
+}
+.box{
+    /* border: 1px solid rgb(255, 0, 179);   */
+    align-self: center;
+    text-align: center;
+}
+
+/* ------------------------ */
+.myFont{
+    font-family: 'Quicksand', sans-serif;
+}
+
+.offcanvas-title{
+    display: flex;
+    margin: auto;
+}
+body{
+    font-family: 'Quicksand', sans-serif;
+    background-color: #cbcddf;
+    background-size: cover;  
+}
+#bg{
+    background: linear-gradient(360deg, #7eaaf7, #97bdff, #b9d3ff,#dce9ff, #dce9ff, #ffffff, #ffffff);
+    width:100vw;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-size: 100% 100%;
+    background-attachment:fixed;
+}
+/* -------------ICONS--------------- */
+.icon1 {
+    color:rgb(4, 27, 156);
+}
+/* .icon {
+    color:rgb(4, 27, 156);
+} */
+.icon:hover {
+    color:rgb(255, 255, 255);
+}
+
+/* ------------------------------------- */
+h1{
+  font-family: 'Quicksand', sans-serif;
+  font-size: 35px;
+  margin-top: 1rem;
+  color:rgb(4, 27, 156);
+  filter: drop-shadow(2px 2px 1.5px rgb(20, 20, 20));
+}
+/* ------------FORM--------------- */
+.myInput{
+    filter: drop-shadow(4px 3px 2px rgb(40, 40, 40));
+    width: 400px;
+    display:flex;
+    margin: 5px auto;
+    height:auto;
+    background-color: rgb(213, 230, 253);
+    border: none;
+    font-family: 'Quicksand', sans-serif;
+        
+}
+::placeholder{
+    font-family: 'Quicksand', sans-serif;
+}
+.edit-input{
+    filter: drop-shadow(4px 3px 2px rgb(40, 40, 40));
+    width: 300px;
+    height: auto;
+    display:flex;
+    margin: 5px auto;
+    background-color: rgb(198, 201, 216);
+    border: none;
+    font-family: 'Quicksand', sans-serif;
+}
+.myGrid{
+    grid-gap:1rem;
+
+}
+.my-btn{
+    float: right;
+    margin:0 .5rem;   
+}
+.gear-btn{
+    width: 40px;
+    height: 40px;
+    font-size: 30px;
+    border-radius: 10px;
+    border: none;
+    background-color: transparent;
+    
+}
+#addTask{
+    filter: drop-shadow(1px 1px 1px rgb(40, 40, 40));
+}
+
+.form-check-label{
+    font-size: 18px;
+    filter: drop-shadow(2px 2px 1px rgb(14, 92, 209));   
+}
+
+.glass{
+    width: 600px;
+    backdrop-filter: blur(2px);
+    border-radius: 10px;
+    padding: 2rem;
+    margin:1rem auto;
+    box-shadow: 5px 4px 7px rgb(40, 40, 40);
+    background: linear-gradient(140deg,
+    rgba(102, 168, 255, 0.15), 
+    rgba(255, 255, 255,.25),
+    rgba(255, 255, 255,.05),
+    rgba(255, 255, 255,.2), 
+    rgba(102, 168, 255, 0.2),
+    rgba(255, 255, 255,.1),
+    rgba(255, 255, 255,.2)
+    );
+}
+ 
+@media only screen and (max-width: 600px){
+    .title-container{
+        margin:.5rem 1rem; 
+        display: grid;
+        grid-template-columns: 1fr 1fr .5fr 4fr;       
+    }
+        
+    .task-container{
+        margin:1rem 1rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr .5fr 4fr;
+    }
+    .box{
+        align-self: start;
+        text-align: start;
+    }
+    .created{
+        grid-column: 1/3;
+        grid-row: 1;
+    }
+    .due{
+        grid-column: 1/3;
+        grid-row: 2;
+    }
+    .task{
+        grid-column: 4/5;
+        grid-row: 1/7;
+    }
+    .done{
+        grid-column: 1/2;
+        grid-row: 4;
+    }
+    .edit{
+        grid-column: 1/2;
+        grid-row: 5;
+    }
+    .delete{
+        grid-column: 1/2;
+        grid-row: 6;
+    }
+    .edit-input{
+        filter: drop-shadow(4px 3px 2px rgb(40, 40, 40));
+        width: 250px;
+        height: auto;
+    }
+    .glass{
+        width: 250px;
+    }
+    .myInput{
+        width: 250px;
+        height:auto;         
+    } 
+}
+@media only screen and (max-width: 500px){
+    .edit-input{
+        width: 160px;
+    }
+}
+@media only screen and (max-width: 350px){
+    .edit-input{
+        width: 120px;
+    }
+}   

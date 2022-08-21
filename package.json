@@ -1,0 +1,15 @@
+{
+  "name": "wk12hw",
+  "version": "1.0.0",
+  "description": "To Do CRUD app",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nereida Rondon",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.2.0",
+    "jquery": "^3.6.0"
+  }
+}

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Nereida Rondon">
+    <meta name="description" content="To do app built with javascript and bootstrap.">
+    <title>Click List</title>
+
+    <link rel="stylesheet" href="styles.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css"> 
+    
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    
+    <script src="https://kit.fontawesome.com/d34772c9df.js" crossorigin="anonymous"></script>
+
+</head>
+<body id="bg">
+
+    <!-------------------GEAR BUTTON----------------------->
+    <button class="gear-btn icon1" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop"><i class="fa-solid fa-gear fa-spin" style="--fa-animation-duration: 15s;" ></i></button>
+
+    <!-------------------PLACEMAT-------------------->
+
+    <div class="offcanvas offcanvas-top text-bg-dark" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
+
+        <div class="offcanvas-header">
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            
+            
+            <h5 class="offcanvas-title myFont" id="offcanvasTopLabel">Background theme:</h5>
+        </div>
+        
+        <div class="offcanvas-body">
+            <div class="container myFont">      
+                <div class="row">
+                    <div class="col-sm">
+                        <div class="form-check">
+                            <input onclick="bgAurora()" class="form-check-input " type="radio" name="bg-radios" id="radio1" value="option1">
+                            <label class="form-check-label radio-btn" for="radio1">
+                                Aurora
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-sm">
+                        <div class="form-check">
+                            <input onclick="bgShore()" class="form-check-input " type="radio" name="bg-radios" id="radio2" value="option2">
+                            <label class="form-check-label radio-btn" for="radio2">
+                                Shore
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-sm">
+                        <div class="form-check">
+                            <input onclick="bgMarble()" class="form-check-input" type="radio" name="bg-radios" id="radio3" value="option3">
+                            <label class="form-check-label radio-btn" for="radio3">Marble</label>
+                        </div>
+                    </div>
+                    <div class="col-sm">
+                        <div class="form-check">
+                            <input onclick="bgRainbow()" class="form-check-input " type="radio" name="bg-radios" id="radio4" value="option4">
+                            <label class="form-check-label radio-btn" for="radio4">
+                                Rainbow
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="col-sm">
+                        <div class="form-check">
+                            <input onclick="bgLight()" class="form-check-input" type="radio" name="bg-radios" id="radio5" value="option5">
+                            <label class="form-check-label radio-btn" for="radio5">Light</label>
+                        </div>
+                    </div>
+                    <div class="col-sm">
+                        <div class="form-check">
+                            <input onclick="bgNone()" class="form-check-input" type="radio" name="bg-radios" id="radio6" value="option6">
+                            <label class="form-check-label radio-btn" for="radio6">None</label>
+                        </div>
+                    </div>
+
+                </div>    
+            </div>  
+        </div>
+    </div>
+
+    <!----------------------------------------------------->
+    
+    
+    <!---------------DATES--------------->
+    
+    <div class="container glass"> 
+        
+        <form>
+            <div class="row">
+                <div class="grid col-l text-center --bs-gap: 1rem;">
+                    <h1 >Click List <i class="fa-solid fa-arrow-pointer icon1"></i></h1>
+                </div>
+                <!-- <div class="col-l d-flex justify-content-center --bs-gap: 1rem;">
+                    <input type="text" class="myInput" id="start-date" placeholder="Start Date" onfocus="(this.type='date')">
+                </div> -->
+                <div class="col-l d-flex justify-content-center --bs-gap: 1rem;">
+                    <input type="text" class="myInput" id="end-date" placeholder="Due Date" onfocus="(this.type='date')">
+                </div>
+                <div class="col-l d-flex justify-content-center --bs-gap: 1rem;">
+                    <input type="text" class="myInput" id="new-task" placeholder="Add something to your list">
+                </div>
+            </div>   
+        </form>
+        <br>
+        
+        <!-----------------ADD BUTTON------------------>
+        <div class="row">
+            <div class="col-l-12">
+                <button id="addBtn" class="my-btn btn btn-outline-dark icon" onclick="task()"><i class="fa-solid fa-plus icon"></i></button>
+            </div>
+        </div>
+    </div>
+           
+        <!-------------------------------------------------->
+        <div id="list-container" class="list">
+            <div class="title-container title-glass">
+                    <div class="created">Created</div>
+                    <div class="due">Due Date</div>
+                    <div class="task">Task</div>
+                    <div class="done"></div>
+                    <div class="edit"></div>
+                    <div class="delete"></div>                        
+            </div>
+
+        </div>
+    
+        <!-------------------------------------------------->
+        
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+        
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+
+    <script src="script.js"></script>
+</body>
+</html>
